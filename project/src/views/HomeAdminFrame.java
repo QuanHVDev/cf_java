@@ -87,6 +87,8 @@ public class HomeAdminFrame extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tableDS = new javax.swing.JTable();
         btnExportExcel = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jPanel1 = new javax.swing.JPanel();
         btnSwitchNV = new javax.swing.JButton();
         btnSwitchSP = new javax.swing.JButton();
@@ -95,6 +97,8 @@ public class HomeAdminFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 255));
+
+        tabPanel.setName(""); // NOI18N
 
         jLabel3.setText("Đơn Giá");
 
@@ -362,6 +366,25 @@ public class HomeAdminFrame extends javax.swing.JFrame {
         );
 
         tabPanel.addTab("Hóa Đơn", jPanel4);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(376, Short.MAX_VALUE)
+                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(435, Short.MAX_VALUE))
+        );
+
+        tabPanel.addTab("tab4", jPanel6);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -831,6 +854,7 @@ public class HomeAdminFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnSwitchSP;
     private javax.swing.JButton btnUpdateItem;
     private javax.swing.JButton btnUpdateNV;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
@@ -838,6 +862,7 @@ public class HomeAdminFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
