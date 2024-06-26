@@ -18,6 +18,7 @@ public class Bill {
     private Timestamp checkOut;
     private int tongTien;
     private String hotenNV;
+    private boolean available;
 
     public Bill(int id, int soBan, Timestamp checkIn, Timestamp checkOut, int tongTien, String hotenNV) {
         setId(id);
@@ -75,5 +76,7 @@ public class Bill {
     public String getHotenNV() {
         return hotenNV;
     }
-
+    public void setAvailabel(boolean  available) {
+        this.available = available;
+    }
 }

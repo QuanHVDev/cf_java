@@ -26,7 +26,7 @@ public class QuanLyVP {
 
     public ArrayList<VatPham> GetMenu() {
         vatPhamArr = new ArrayList<VatPham>();
-        String query = "select * FROM vatpham;";
+        String query = "select * FROM vatpham WHERE available = 1;";
         ResultSet rs = Database.queryHandle(query, "get");
 
         try {
@@ -46,12 +46,12 @@ public class QuanLyVP {
     }
 
     public void Insert(String name, int price) {
-        String query = "INSERT INTO vatpham (tenVatPham, donGia) VALUES('" + name + "', " + price + ");";
+        String query = "INSERT INTO vatpham (tenVatPham, donGia,available) VALUES('" + name + "', " + price + "'1'" +");";
         Database.queryHandle(query, "insert");
     }
 
     public VatPham GetVatPhamByName(String name) {
-        String query = "SELECT * FROM vatpham WHERE tenVatPham = \"" + name + "\";";
+        String query = "SELECT * FROM vatpham WHERE tenVatPham = \"" + name + "\" AND available = '1';";
         ResultSet rs = Database.queryHandle(query, "get");
         VatPham vp = new VatPham();
         vp.setID(-1);
@@ -75,7 +75,7 @@ public class QuanLyVP {
     }
 
     public void Delete(int id) {
-        String query = "DELETE FROM vatpham WHERE ID = " + id;
-        Database.queryHandle(query, "delete");
+        String query = "UPDATE vatpham SET available = '0' WHERE ID = " + id;
+        Database.queryHandle(query, "update");
     }
 }

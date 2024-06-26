@@ -41,7 +41,7 @@ public class QuanLyNhanVien {
         dSNhanVien = new ArrayList<NhanVien>();
 //        Database db = new Database();
         String query = "SELECT * FROM thongtinnguoidung "
-                + "INNER JOIN quyen ON quyen.ID = thongtinnguoidung.IDQuyen "
+                + "INNER JOIN quyen ON quyen.ID = thongtinnguoidung.IDQuyen " + "WHERE available = '1'" 
                 + "ORDER BY thongtinnguoidung.id DESC;";
         ResultSet rs = db.queryHandle(query, "get");
         if (rs != null) {
@@ -54,8 +54,9 @@ public class QuanLyNhanVien {
                     String quyen = rs.getString("tenQuyen");
                     String taiKhoan = rs.getString("taiKhoan");
                     String matKhau = rs.getString("matKhau");
+                    boolean available = rs.getBoolean("available");
                     int idRole = rs.getInt("idQuyen");
-                    NhanVien nv = new NhanVien(000, "A", id, hoVaTen, ngaySinh, diaChi, taiKhoan, matKhau, idRole);
+                    NhanVien nv = new NhanVien(000, "A", id, hoVaTen, ngaySinh, diaChi, taiKhoan, matKhau, idRole,available);
                     themDsNhanVien(nv);
                 }
             } catch (SQLException ex) {
@@ -104,9 +105,8 @@ public class QuanLyNhanVien {
     }
 
     public void xoaNhanVien(int id) {
-        ResultSet rs = db.queryHandle("DELETE FROM nhanvien WHERE IDNguoiDung=" + id, "delete");
-        rs = db.queryHandle("DELETE FROM thongtinnguoidung WHERE ID=" + id, "delete");
-
+        ResultSet rs = db.queryHandle("UPDATE nhanvien SET available = '0'  IDNguoiDung=" + id, "update");
+        rs = db.queryHandle("UPDATE nhanvien SET available = '0'  IDNguoiDung=" + id, "update");
     }
 
     public void searchByColumn(String col, String value) throws SQLException {
@@ -122,7 +122,9 @@ public class QuanLyNhanVien {
             String taiKhoan = rs.getString("taiKhoan");
             String matKhau = rs.getString("matKhau");
             int idRole = rs.getInt("id");
-            NhanVien nv = new NhanVien(luong, caLam, id, hoVaTen, ngaySinh, diaChi, taiKhoan, matKhau, idRole);
+            boolean available = rs.getBoolean("available");
+
+            NhanVien nv = new NhanVien(luong, caLam, id, hoVaTen, ngaySinh, diaChi, taiKhoan, matKhau, idRole, available);
             themDsNhanVien(nv);
         }
     }
@@ -152,12 +154,16 @@ public class QuanLyNhanVien {
             Date ngaySinh = rs.getDate("ngaySinh");
             String diaChi = rs.getString("diaChi");
             String quyen = rs.getString("tenQuyen");
+            int idRole = rs.getInt("idRole");
             String caLam = rs.getString("caLam");
             int luong = rs.getInt("luong");
             String taiKhoan = rs.getString("taiKhoan");
             String matKhau = rs.getString("matKhau");
+            boolean available = rs.getBoolean("available");
 
-            NhanVien nv = new NhanVien(luong, caLam, id, hoVaTen, ngaySinh, diaChi, taiKhoan, matKhau, 0);
+
+
+            NhanVien nv = new NhanVien(luong, caLam, id, hoVaTen, ngaySinh, diaChi, taiKhoan, matKhau, idRole, available);
             return nv;
         }
         return null;

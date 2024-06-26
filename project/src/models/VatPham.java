@@ -16,7 +16,8 @@ public class VatPham {
     private String tenVatPham;
     private int giaThanh;
     private Time thoiGianGoiMon;
- 
+     private boolean availabel;
+
 
     public VatPham() {
     }
@@ -27,10 +28,12 @@ public class VatPham {
         this.giaThanh = giaThanh;
     }
 
-    public VatPham(int ID, String tenVatPham, int giaThanh, Time thoiGianGoiMon) {
+    public VatPham(int ID, String tenVatPham, int giaThanh, Time thoiGianGoiMon,boolean available) {
         this.ID = ID;
         this.tenVatPham = tenVatPham;
         this.giaThanh = giaThanh;
+        this.availabel = available;
+
       
     }
 
