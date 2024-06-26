@@ -122,7 +122,7 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane1" pref="701" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane1" pref="737" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Component id="btnAddItem" min="-2" pref="151" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -267,7 +267,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" pref="701" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane2" pref="737" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -294,7 +294,7 @@
                                   <Component id="btnDeleteNV" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" pref="463" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" pref="464" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -435,7 +435,7 @@
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           <Component id="btnExportExcel" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jScrollPane3" pref="689" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane3" pref="713" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -447,7 +447,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnExportExcel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane3" pref="469" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane3" pref="455" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -558,7 +558,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="18" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="jScrollPane4" min="-2" pref="310" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
