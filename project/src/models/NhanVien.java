@@ -14,7 +14,7 @@ public class NhanVien extends Nguoi{
     private int luong;
     private String caLam;
 
-    public NhanVien(int luong, String caLam, int ID, String hoVaTen, Date ngaySinh, String diaChi, String taiKhoan, String matKhau, int idQuyen) {
+    public NhanVien(int luong, String caLam, int ID, String hoVaTen, Date ngaySinh, String diaChi, String taiKhoan, String matKhau, int idQuyen,boolean available) {
         super(ID, hoVaTen, ngaySinh, diaChi, taiKhoan, matKhau, idQuyen);
         this.luong = luong;
         this.caLam = caLam;

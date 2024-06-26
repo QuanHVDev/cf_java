@@ -19,6 +19,7 @@ public class Nguoi {
     private String taiKhoan;
     private String matKhau;
     private int idQuyen;
+    private boolean available;
 
     public void setIdQuyen(int idQuyen) {
         this.idQuyen = idQuyen;
@@ -90,5 +91,7 @@ public class Nguoi {
     public void setTaiKhoan(String taiKhoan) {
         this.taiKhoan = taiKhoan;
     }
-
+       public void setAvailabel(boolean  available) {
+        this.available = available;
+    }
 }
