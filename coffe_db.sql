@@ -30,7 +30,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `ban` (
   `soBan` int(11) NOT NULL,
+<<<<<<< HEAD
   `trangThaiTrong` tinyint(1) DEFAULT '0',
+=======
+  `trangThai` tinyint(1) DEFAULT '0',
+>>>>>>> 3345c1408ee48104627ec050b804e19a6f46d316
   `avalable` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
@@ -38,7 +42,11 @@ CREATE TABLE `ban` (
 -- Dumping data for table `ban`
 --
 
+<<<<<<< HEAD
 INSERT INTO `ban` (`soBan`, `trangThaiTrong`, `avalable`) VALUES
+=======
+INSERT INTO `ban` (`soBan`, `trangThai`, `avalable`) VALUES
+>>>>>>> 3345c1408ee48104627ec050b804e19a6f46d316
 (1, 0, 1),
 (2, 1, 1),
 (3, 1, 1),
@@ -167,7 +175,12 @@ CREATE TABLE `thongtinnguoidung` (
 
 INSERT INTO `thongtinnguoidung` (`ID`, `hoVaTen`, `ngaySinh`, `diaChi`, `taiKhoan`, `matKhau`, `IDQuyen`, `available`) VALUES
 (1, 'admin', '2024-06-10', 'HaNoi', 'admin', 'admin', 1, 1),
+<<<<<<< HEAD
 (2, 'Van A', '2003-12-12', 'soc son', 'danThuong', 'danThuong', 2, 0),
+=======
+(2, 'Van A', '2003-12-12', 'soc son', 'danThuong', 'danThuong', 2, 1),
+(3, 'Van AB', '2003-12-12', 'soc son', '1', '1', 2, 1),
+>>>>>>> 3345c1408ee48104627ec050b804e19a6f46d316
 (4, 'Quân', '2003-12-12', 'Thanh Hoa', 'quan', '1', 2, 1),
 (6, 'jung', '2003-12-12', 'hanoi', 'jung', 'jung', 2, 0);
 
