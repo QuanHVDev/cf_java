@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 10, 2024 at 01:22 AM
+-- Generation Time: Jun 26, 2024 at 02:26 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -30,18 +30,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `ban` (
   `soBan` int(11) NOT NULL,
-  `trangThai` tinyint(1) DEFAULT '0'
+  `trangThaiTrong` tinyint(1) DEFAULT '0',
+  `avalable` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
 -- Dumping data for table `ban`
 --
 
-INSERT INTO `ban` (`soBan`, `trangThai`) VALUES
-(1, 1),
-(2, 0),
-(3, 0),
-(4, 0);
+INSERT INTO `ban` (`soBan`, `trangThaiTrong`, `avalable`) VALUES
+(1, 0, 1),
+(2, 1, 1),
+(3, 1, 1),
+(4, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -63,10 +64,20 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`ID`, `soBan`, `checkIn`, `checkOut`, `idNhanVien`, `isPayed`) VALUES
-(1, 2, '2018-12-12 23:50:55', NULL, NULL, 0),
+(1, 2, '2018-12-12 23:50:55', '2024-06-19 17:24:13', 2, 1),
 (2, 1, '2023-12-15 22:03:00', '2023-12-15 22:03:54', 2, 1),
-(3, 3, '2023-12-15 22:04:04', NULL, NULL, 0),
-(4, 4, '2023-12-15 22:04:20', NULL, NULL, 0);
+(3, 3, '2023-12-15 22:04:04', '2024-06-19 17:24:16', 2, 1),
+(4, 4, '2023-12-15 22:04:20', '2024-06-19 17:24:18', 2, 1),
+(5, 1, '2024-06-19 17:22:15', '2024-06-19 17:24:09', 2, 1),
+(6, 1, '2024-06-19 20:52:19', '2024-06-19 20:52:25', 2, 1),
+(7, 1, '2024-06-19 20:52:45', '2024-06-19 20:52:46', 2, 1),
+(8, 1, '2024-06-19 20:52:53', NULL, NULL, 0),
+(9, 2, '2024-06-22 13:30:30', '2024-06-22 13:30:35', 2, 1),
+(10, 2, '2024-06-22 13:37:09', '2024-06-22 13:37:11', 2, 1),
+(11, 2, '2024-06-22 13:37:23', '2024-06-22 13:37:34', 2, 1),
+(12, 4, '2024-06-22 13:40:43', '2024-06-22 13:40:45', 4, 1),
+(13, 2, '2024-06-22 14:16:15', '2024-06-22 14:16:24', 2, 1),
+(14, 4, '2024-06-22 14:16:41', NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -95,7 +106,24 @@ INSERT INTO `orderitem` (`IDHoaDon`, `IDVatPham`, `soLuong`, `thoiGianGoiMon`) V
 (3, 1, 1, '22:04:00'),
 (3, 2, 1, '22:04:02'),
 (4, 2, 1, '22:04:16'),
-(4, 3, 1, '22:04:18');
+(4, 3, 1, '22:04:18'),
+(1, 2, 1, '17:21:36'),
+(1, 3, 1, '17:21:40'),
+(5, 2, 1, '17:22:10'),
+(5, 3, 1, '17:22:13'),
+(6, 1, 5, '20:51:33'),
+(6, 2, 2, '20:52:12'),
+(7, 1, 1, '20:52:43'),
+(8, 2, 1, '20:52:49'),
+(9, 3, 1, '13:30:26'),
+(10, 5, 15, '13:36:35'),
+(10, 3, 4, '13:36:51'),
+(10, 2, 4, '13:37:03'),
+(11, 5, 12, '13:37:20'),
+(12, 5, 1, '13:40:41'),
+(13, 5, 3, '14:16:03'),
+(13, 3, 5, '14:16:09'),
+(14, 6, 1, '14:16:39');
 
 -- --------------------------------------------------------
 
@@ -129,17 +157,19 @@ CREATE TABLE `thongtinnguoidung` (
   `diaChi` varchar(256) COLLATE utf8_vietnamese_ci DEFAULT NULL,
   `taiKhoan` varchar(256) COLLATE utf8_vietnamese_ci DEFAULT NULL,
   `matKhau` varchar(256) COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `IDQuyen` int(11) DEFAULT NULL
+  `IDQuyen` int(11) DEFAULT NULL,
+  `available` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
 -- Dumping data for table `thongtinnguoidung`
 --
 
-INSERT INTO `thongtinnguoidung` (`ID`, `hoVaTen`, `ngaySinh`, `diaChi`, `taiKhoan`, `matKhau`, `IDQuyen`) VALUES
-(1, 'khoa', '2003-11-12', 'Ninh Binh', 'admin', 'admin', 1),
-(2, 'Van A', '2003-12-12', 'soc son', 'danThuong', 'danThuong', 2),
-(3, 'Van Q', '2003-12-12', 'q', 'q', 'q', 2);
+INSERT INTO `thongtinnguoidung` (`ID`, `hoVaTen`, `ngaySinh`, `diaChi`, `taiKhoan`, `matKhau`, `IDQuyen`, `available`) VALUES
+(1, 'admin', '2024-06-10', 'HaNoi', 'admin', 'admin', 1, 1),
+(2, 'Van A', '2003-12-12', 'soc son', 'danThuong', 'danThuong', 2, 0),
+(4, 'Quân', '2003-12-12', 'Thanh Hoa', 'quan', '1', 2, 1),
+(6, 'jung', '2003-12-12', 'hanoi', 'jung', 'jung', 2, 0);
 
 -- --------------------------------------------------------
 
@@ -150,17 +180,21 @@ INSERT INTO `thongtinnguoidung` (`ID`, `hoVaTen`, `ngaySinh`, `diaChi`, `taiKhoa
 CREATE TABLE `vatpham` (
   `ID` int(11) NOT NULL,
   `tenVatPham` varchar(256) COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `donGia` varchar(256) COLLATE utf8_vietnamese_ci DEFAULT NULL
+  `donGia` varchar(256) COLLATE utf8_vietnamese_ci DEFAULT NULL,
+  `available` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 --
 -- Dumping data for table `vatpham`
 --
 
-INSERT INTO `vatpham` (`ID`, `tenVatPham`, `donGia`) VALUES
-(1, 'cà phê đen', '20000'),
-(2, 'cà phê sữa', '25000'),
-(3, 'ca pô chi lô', '40000');
+INSERT INTO `vatpham` (`ID`, `tenVatPham`, `donGia`, `available`) VALUES
+(1, 'cà phê đen', '20000', 1),
+(2, 'cà phê sữa 3', '25000', 0),
+(3, 'ca pô chi nô', '40000', 1),
+(5, 'Kem dừa', '270000', 1),
+(6, 'trà chanh', '20000', 0),
+(7, 'test', '20000', 0);
 
 --
 -- Indexes for dumped tables
@@ -220,7 +254,7 @@ ALTER TABLE `ban`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `quyen`
@@ -232,13 +266,13 @@ ALTER TABLE `quyen`
 -- AUTO_INCREMENT for table `thongtinnguoidung`
 --
 ALTER TABLE `thongtinnguoidung`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `vatpham`
 --
 ALTER TABLE `vatpham`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
