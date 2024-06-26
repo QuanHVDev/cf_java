@@ -27,7 +27,10 @@ public class Ban {
     }
 
     public String getTrangThai() {
-        return trangThai;
+        if(trangThai.equals("0")){
+            return "Đang sử dụng";
+        }
+        return "Trống";
     }
 
     public void setSoBan(int soBan) {
