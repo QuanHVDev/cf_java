@@ -9,9 +9,11 @@ import java.sql.Timestamp;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import models.Bill;
@@ -166,4 +168,44 @@ public class QuanLyHoaDon {
         return list;
     }
 
+    
+    public long GetDoanhThu(Date start, Date end){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        
+        String query = String.format("SELECT SUM(orderitem.soLuong * vatpham.donGia) AS tong FROM hoadon inner JOIN orderitem on orderitem.IDHoaDon = hoadon.ID inner JOIN vatpham on vatpham.ID = orderitem.IDVatPham WHERE checkIn >= '%s' AND checkOut <= '%s'", 
+            ""+dateFormat.format(start), 
+            ""+dateFormat.format(end));
+        
+        System.out.println(query);
+        ResultSet rs = Database.queryHandle(query, "get");
+        try {
+            while (rs.next()) {
+                return rs.getLong("tong");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QuanLyHoaDon.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return 0;
+    }
+    
+    
+    public int GetCountHoaDon(Date start, Date end){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        String query = String.format("SELECT count(hoadon.soBan) AS count FROM hoadon WHERE checkIn >= '%s' AND checkOut <= '%s'", 
+            ""+dateFormat.format(start), 
+            ""+dateFormat.format(end));
+        
+        ResultSet rs = Database.queryHandle(query, "get");
+        try {
+            while (rs.next()) {
+                return rs.getInt("count");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QuanLyHoaDon.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return 0;
+    }
 }
