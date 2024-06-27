@@ -44,3 +44,4 @@ _ReSharper*/
 *.publishsettings
 *.pubxml
 *.publishproj
+build/
