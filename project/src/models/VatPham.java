@@ -18,9 +18,10 @@ public class VatPham {
     private Time thoiGianGoiMon;
      private boolean availabel;
 
-
     public VatPham() {
     }
+
+
     
     public VatPham(int ID, String tenVatPham, int giaThanh) {
         this.ID = ID;
@@ -48,9 +49,6 @@ public class VatPham {
     public void setGiaThanh(int giaThanh) {
         this.giaThanh = giaThanh;
     }
-
- 
-    
     public int getID() {
         return ID;
     }

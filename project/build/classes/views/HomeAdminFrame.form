@@ -122,7 +122,11 @@
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+                                  <Component id="jScrollPane1" pref="737" max="32767" attributes="0"/>
+=======
                                   <Component id="jScrollPane1" pref="743" max="32767" attributes="0"/>
+>>>>>>> origin/main
                                   <Group type="102" attributes="0">
                                       <Component id="btnAddItem" min="-2" pref="151" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
@@ -267,7 +271,11 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
+<<<<<<< HEAD
+                                      <Component id="jScrollPane2" pref="737" max="32767" attributes="0"/>
+=======
                                       <Component id="jScrollPane2" pref="743" max="32767" attributes="0"/>
+>>>>>>> origin/main
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -294,7 +302,7 @@
                                   <Component id="btnDeleteNV" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" pref="463" max="32767" attributes="0"/>
+                              <Component id="jScrollPane2" pref="464" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -429,8 +437,19 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
+<<<<<<< HEAD
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="btnExportExcel" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jScrollPane3" pref="713" max="32767" attributes="0"/>
+                                  </Group>
+=======
                                   <EmptySpace pref="633" max="32767" attributes="0"/>
                                   <Component id="btnExportExcel" min="-2" max="-2" attributes="0"/>
+>>>>>>> origin/main
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -440,7 +459,13 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnExportExcel" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
+                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane3" pref="455" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+=======
                                   <EmptySpace pref="496" max="32767" attributes="0"/>
+>>>>>>> origin/main
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -526,9 +551,30 @@
                               </Group>
                               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jDateChooser1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jScrollPane4" min="-2" pref="310" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="jDateChooser2" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+=======
                                   <Group type="102" attributes="0">
                                       <Component id="btnXemDT" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+>>>>>>> origin/main
                                       <Component id="jDateChooser3" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jDateChooser4" min="-2" max="-2" attributes="0"/>

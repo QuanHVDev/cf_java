@@ -8,11 +8,15 @@ import config.Database;
 import controllers.QuanLyBan;
 import controllers.QuanLyNhanVien;
 import controllers.QuanLyTaiKhoan;
+import controllers.QuanLyVoucher;
+import java.sql.Timestamp;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import models.voucher;
 
 /**
  *
@@ -24,12 +28,14 @@ public class LoginFrame extends javax.swing.JFrame {
      * Creates new form LoginFrame
      */
     private QuanLyNhanVien qlNhanVien;
+    private QuanLyVoucher QuanLyvc;
 
     public LoginFrame() {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         qlNhanVien = new QuanLyNhanVien();
+        this.QuanLyvc = new QuanLyVoucher();
     }
 
     /**
@@ -154,6 +160,9 @@ public class LoginFrame extends javax.swing.JFrame {
         char[] passwordChars = txtPass.getPassword();
         String password = new String(passwordChars);
         int role = qlNhanVien.GetRoleWithUserNameAndPass(txtAccount.getText(), password);
+//        ArrayList<voucher> vc = QuanLyvc.getDSVoucher();
+//        System.out.println(vc);
+//            QuanLyvc.addVoucher("SieuSaleVcloz", 35, 50, new Timestamp(1719221486* 1000L),new Timestamp(1719221486* 1000L),true);
         if (role > 0) {
             if (role == 1) {
                 HomeAdminFrame home = new HomeAdminFrame();
