@@ -28,7 +28,6 @@ public class QuanLyBan {
     public ArrayList<Ban> getDSBan(){
         DSBan = new ArrayList<Ban>();
         ResultSet rs = db.queryHandle("SELECT * FROM ban ", "get");
-        System.out.println(rs);
         try {
             while (rs.next()) {
                 int soBan = rs.getInt("soBan");
